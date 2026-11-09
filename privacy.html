@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sieve 隐私政策 · Privacy Policy</title>
+<meta name="description" content="Sieve 在你的设备上完成全部广告拦截，不收集、不上传任何浏览数据。">
+<!-- Self-contained on purpose: no external fonts, scripts or analytics. -->
+<style>
+  :root {
+    --bg: #f6f8f7; --card: #ffffff; --text: #17201b; --muted: #5c6b63; --accent: #12a86f; --line: #e3e9e6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0b1410; --card: #13201a; --text: #e8f0ec; --muted: #9fb2a8; --accent: #3be08c; --line: #22342b; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  header { margin-bottom: 24px; }
+  header a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  h1 { font-size: 28px; line-height: 1.3; margin: 8px 0 4px; }
+  h2 { font-size: 19px; margin: 28px 0 8px; }
+  p, li { color: var(--text); }
+  .muted { color: var(--muted); font-size: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 4px 20px 16px; margin: 20px 0; }
+  .summary { border-left: 4px solid var(--accent); }
+  ul { padding-left: 1.2em; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  nav.lang { display: flex; gap: 12px; font-size: 14px; }
+  nav.lang a { color: var(--muted); }
+  code { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <a href="./">Sieve</a>
+  <nav class="lang"><a href="#zh">中文</a><a href="#en">English</a></nav>
+</header>
+
+<section id="zh" lang="zh-Hans">
+  <h1>隐私政策</h1>
+  <p class="muted">生效日期：2026 年 10 月 22 日<!-- TODO: update on release --></p>
+
+  <div class="card summary">
+    <h2>一句话总结</h2>
+    <p>Sieve 在你的设备上完成全部广告拦截。我们没有服务器、没有账号系统，<strong>不收集、不上传</strong>你的浏览记录、DNS 查询、拦截日志或任何个人信息。</p>
+  </div>
+
+  <h2>1. Sieve 如何工作</h2>
+  <p>Sieve 使用 iOS 提供的网络扩展接口（Network Extension）在系统层面拦截广告。Sieve 的处理全部发生在你的设备上，流量不会被转发到 Sieve 或任何第三方的服务器，也不会改变你的 IP 地址。</p>
+
+  <h2>2. 我们不收集的信息</h2>
+  <ul>
+    <li>浏览记录、访问的网址或域名、DNS 查询内容；</li>
+    <li>拦截日志和统计数据；</li>
+    <li>设备标识符、广告标识符（IDFA）、位置、通讯录等任何个人信息。</li>
+  </ul>
+  <p>Sieve 不包含任何第三方统计、广告或崩溃上报 SDK。</p>
+
+  <h2>3. 保存在你设备上的数据</h2>
+  <table>
+    <tr><th>数据</th><th>用途</th><th>保存方式</th></tr>
+    <tr><td>规则与订阅内容</td><td>决定拦截什么</td><td>App 的共享存储，可随时删除订阅</td></tr>
+    <tr><td>拦截统计（每天的数量、拦截最多的域名）</td><td>在首页和「活动 › 报告」展示</td><td>仅本机，不进入 iCloud 备份，可在「设置 › 数据 › 清除全部本机记录」删除</td></tr>
+    <tr><td>拦截记录（被拦的域名和时间；开启「记录放行的请求」或录制时也包括放行的域名）</td><td>在「活动」页展示、查看域名详情、一键放行</td><td>仅本机，保存 7 天后自动删除，不进入 iCloud 备份，可随时一键清除</td></tr>
+    <!-- 首发隐藏「深度」（App 里的 DEEP_HIDDEN），恢复时去掉这层注释：
+    <tr><td>解密广告接口证书的私钥</td><td>在本机解密你允许的域名</td><td>仅本机钥匙串，不可导出</td></tr>
+    -->
+  </table>
+  <p>以上数据都不会离开你的设备。删除 App 会删除规则、统计和记录。</p>
+  <!-- 首发隐藏「深度」（App 里的 DEEP_HIDDEN），恢复时用注释里的内容替换上面一段：
+  <p>以上数据都不会离开你的设备。删除 App 会删除规则、统计和记录；但<strong>已安装的根证书描述文件不会随 App 删除</strong>，不再使用时请到「设置 › 通用 › 设备管理」删除它。</p>
+  -->
+
+  <h2>4. Sieve 会进行的网络访问</h2>
+  <ul>
+    <li><strong>DNS 解析：</strong>未被拦截的域名查询会发送给你在「设置 › 上游 DNS」中选择的公共 DNS 服务。默认值按手机的时区选：中国大陆时区为阿里公共 DNS 和腾讯 DNSPod，其他时区为 Cloudflare 和 Google；也可以改选 114DNS，或填写自己的服务器。这与系统默认使用运营商 DNS 的方式相同，相关查询受这些服务商各自的隐私政策约束。被拦截的查询直接在本机回答，不会发出。</li>
+    <li><strong>规则订阅：</strong>你添加的订阅链接由 App 直接下载。对方服务器会像对待普通下载一样看到你的 IP 地址。</li>
+    <li><strong>防护分类：</strong>你开启的恶意网站、钓鱼等分类，会从对应列表的发布地址下载并定期更新。</li>
+    <li><strong>一键体检：</strong>检测时会查询一个不存在的随机域名，确认你的 DNS 服务器能否连上。</li>
+    <li><strong>内置列表更新：</strong>App 会定期从苹果的 iCloud（CloudKit 公共数据库）读取我们发布的内置规则更新。读取不需要登录 iCloud，我们收不到任何能识别你的信息；苹果按其隐私政策处理这些请求。</li>
+    <li><strong>购买：</strong>Sieve Pro 的购买、订阅与恢复由 Apple 的 App Store 处理。我们不会获得你的付款信息或 Apple ID。</li>
+    <li><strong>iCloud 同步（可选，默认关闭）：</strong>开启后，你的自定义规则、订阅列表和开关状态通过你自己的 iCloud 账户在你的设备之间同步，由 Apple 存储，我们无法访问。</li>
+  </ul>
+
+  <h2>4.1 系统权限</h2>
+  <ul>
+    <li><strong>定位（可选）：</strong>只在你把当前 Wi-Fi 加入「网络场景」时请求，因为 iOS 要求有定位权限才能读取 Wi-Fi 名称。Sieve 不读取、不记录你的位置。</li>
+    <li><strong>通知（可选）：</strong>只用于你开启的「每周战报」和「误拦提醒」，内容在本机生成。</li>
+  </ul>
+
+  <h2>5. 接管全部流量（「全面」）</h2>
+  <p>开启「全面」后，所有 App 的连接都在你的设备上经过 Sieve。Sieve 只读取每条连接要访问的域名，用来匹配规则：命中就断开，否则按原地址直接转发，不解密、不读取、不记录内容，也不缓存任何数据。拦截记录里只有域名。所有处理都在本机完成，流量不经过任何服务器。</p>
+  <!-- 首发隐藏「深度」（App 里的 DEEP_HIDDEN），恢复时用注释里的内容替换上面两行：
+  <h2>5. 接管全部流量（「全面」「深度」）</h2>
+  <p>开启「全面」或「深度」后，所有 App 的连接都在你的设备上经过 Sieve。Sieve 只读取每条连接要访问的域名，用来匹配规则：命中就断开，否则按原地址直接转发，不解密、不读取、不记录内容，也不缓存任何数据。拦截记录里只有域名。所有处理都在本机完成，流量不经过任何服务器。</p>
+  -->
+
+  <!-- 首发隐藏「深度」（App 里的 DEEP_HIDDEN），恢复时去掉这层注释：
+  <h2>5.1 解密广告接口</h2>
+  <p>开启「解密广告接口」需要你安装并信任一张在你设备上生成的根证书。Sieve 只会解密规则中明确列出的广告相关域名，在本机删除或替换广告内容后直接交还给 App。解密的内容不会被保存、记录或传输。苹果、支付、银行和政府网站的域名无论规则如何都不会被解密；使用证书固定的 App 会被自动识别并跳过。订阅和分享链接不能自行开启解密：会解密的模块在添加或扩大解密范围前都需要你确认。你可以随时关闭解密，或在「设置 › 通用 › 设备管理」中删除该证书。</p>
+  -->
+
+  <h2>6. 儿童</h2>
+  <p>Sieve 不面向 13 岁以下儿童，也不会有意收集任何人的个人信息。</p>
+
+  <h2>7. 政策变更</h2>
+  <p>如本政策发生变化，我们会更新本页面和生效日期；涉及数据处理方式的重大变更会在 App 内提示。</p>
+
+  <h2>8. 数据共享</h2>
+  <p>我们不向任何第三方出售、提供或披露你的数据——我们本来就没有你的数据。</p>
+
+  <h2>9. 联系我们</h2>
+  <p>对本政策有任何疑问，请联系：<a href="mailto:yyy5420@gmail.com">yyy5420@gmail.com</a></p>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--line);margin:48px 0">
+
+<section id="en" lang="en">
+  <h1>Privacy Policy</h1>
+  <p class="muted">Effective date: October 22, 2026</p>
+
+  <div class="card summary">
+    <h2>In short</h2>
+    <p>Sieve blocks ads entirely on your device. We run no servers and have no accounts. We <strong>do not collect or transmit</strong> your browsing history, DNS queries, block logs or any personal information.</p>
+  </div>
+
+  <h2>1. How Sieve works</h2>
+  <p>Sieve uses the Network Extension interface that iOS provides to block ads system-wide. All processing happens on your device, traffic is not routed to Sieve or any third-party server, and your IP address does not change.</p>
+
+  <h2>2. What we don't collect</h2>
+  <ul>
+    <li>Browsing history, visited URLs or domains, DNS query contents;</li>
+    <li>Block logs and statistics;</li>
+    <li>Device identifiers, advertising identifier (IDFA), location, contacts or any other personal information.</li>
+  </ul>
+  <p>Sieve contains no third-party analytics, advertising or crash-reporting SDKs.</p>
+
+  <h2>3. Data stored on your device</h2>
+  <ul>
+    <li><strong>Rules and subscription contents:</strong> to decide what to block. You can delete them at any time.</li>
+    <li><strong>Statistics</strong> (daily counts, most-blocked domains): shown on the home screen and in Activity › Report. Kept on the device only, excluded from iCloud backups; delete them in Settings › Data › Clear all on-device records.</li>
+    <li><strong>Activity log</strong> (blocked domains and times; also let-through domains while "Log allowed requests" or a recording is on): shown in Activity and domain details. Kept on the device for 7 days, then deleted automatically; excluded from iCloud backups.</li>
+    <!-- First release hides Deep (DEEP_HIDDEN in the app); remove this comment to bring it back:
+    <li><strong>Private key of the Decrypt Ad APIs certificate:</strong> kept in this device's Keychain only. It is not exportable.</li>
+    -->
+  </ul>
+  <p>None of this data leaves your device. Deleting the app deletes rules, statistics and logs.</p>
+  <!-- First release hides Deep; to bring it back, replace the paragraph above with:
+  <p>None of this data leaves your device. Deleting the app deletes rules, statistics and logs, but <strong>an installed root certificate profile stays</strong>: remove it in Settings › General › Device Management when you no longer use Sieve.</p>
+  -->
+
+  <h2>4. Network access by Sieve</h2>
+  <ul>
+    <li><strong>DNS resolution:</strong> lookups that are not blocked are sent to the public DNS resolver you choose in Settings. The default follows your phone's time zone: AliDNS and DNSPod in mainland China, Cloudflare and Google elsewhere; you can pick 114DNS or enter your own servers instead. Their own privacy policies apply. Blocked lookups are answered on the device and never sent.</li>
+    <li><strong>Rule subscriptions:</strong> URLs you add are downloaded directly by the app. Those servers see your IP address, as with any download.</li>
+    <li><strong>Protection categories:</strong> categories you turn on (malware, phishing, …) are downloaded from their publishers and updated periodically.</li>
+    <li><strong>Diagnostics:</strong> the check looks up a random, non-existent name to confirm your DNS resolver answers.</li>
+    <li><strong>Built-in list updates:</strong> the app periodically reads the built-in rule updates we publish to Apple's iCloud (CloudKit public database). Reading needs no iCloud sign-in, and nothing that identifies you reaches us. Apple handles these requests under its privacy policy.</li>
+    <li><strong>Purchases:</strong> handled by Apple's App Store. We never receive your payment details or Apple ID.</li>
+    <li><strong>iCloud sync (optional, off by default):</strong> your custom rules, subscription list and switches sync between your devices through your own iCloud account. Apple stores this data; we cannot access it.</li>
+  </ul>
+  <p><strong>Permissions.</strong> Location is requested only when you add the current Wi-Fi to Network scenes, because iOS requires it to read the network name. Sieve never reads or records your location. Notifications are used only for the optional weekly report and false-block alerts, generated on the device.</p>
+
+  <h2>5. Taking over all traffic (Full)</h2>
+  <p>At Full, every app's connections pass through Sieve on your device. Sieve reads only the domain each connection is for, to match it against your rules: a match is dropped, anything else is forwarded to its original address unchanged. It does not decrypt, read, log or cache any content, and the activity log holds domains only. Everything happens on the device; traffic never passes through any server.</p>
+  <!-- First release hides Deep; to bring it back, replace the two lines above with:
+  <h2>5. Taking over all traffic (Full and Deep)</h2>
+  <p>At Full or Deep, every app's connections pass through Sieve on your device. Sieve reads only the domain each connection is for, to match it against your rules: a match is dropped, anything else is forwarded to its original address unchanged. It does not decrypt, read, log or cache any content, and the activity log holds domains only. Everything happens on the device; traffic never passes through any server.</p>
+  -->
+
+  <!-- First release hides Deep (DEEP_HIDDEN in the app); remove this comment to bring it back:
+  <h2>5.1 Decrypt Ad APIs (optional)</h2>
+  <p>Decrypt Ad APIs requires installing and trusting a root certificate generated on your device. Sieve decrypts only the ad-related domains explicitly listed in your rules. It removes or replaces ad content on the device and hands the rest back to the app. Decrypted content is never stored, logged or transmitted. Apple, payment, banking and government domains are never decrypted, whatever the rules say; apps that use certificate pinning are detected and skipped automatically. Subscriptions and share links can't turn decryption on by themselves: modules need your confirmation before they're added or widen what they decrypt. You can turn decryption off at any time, or remove the certificate in Settings › General › Device Management.</p>
+  -->
+
+  <h2>6. Children</h2>
+  <p>Sieve is not directed at children under 13 and does not knowingly collect personal information from anyone.</p>
+
+  <h2>7. Changes</h2>
+  <p>If this policy changes, we will update this page and its effective date. Material changes to data handling will be announced in the app.</p>
+
+  <h2>8. Data sharing</h2>
+  <p>We don't sell, share or disclose your data to anyone — we never have it in the first place.</p>
+
+  <h2>9. Contact</h2>
+  <p>Questions about this policy: <a href="mailto:yyy5420@gmail.com">yyy5420@gmail.com</a></p>
+</section>
+</main>
+</body>
+</html>
